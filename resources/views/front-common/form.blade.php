@@ -71,7 +71,7 @@
                     Your Success Starts Here!
                 </div>
                 <div id="successMessage" class="alert alert-success hidden text-green-600 bg-green-500/25 border border-green-600 mt-4 rounded-[6px] p-2"></div>
-                <form id="contactForm" action="{{route('store')}}" method="POST">
+               <form id="contactForm" action="{{ route('store') }}" method="POST">
                     @csrf
                     <div class="grid md:mt-6 mt-5 sm:grid-cols-2 grid-cols-1 md:gap-6 sm:gap-5 gap-3">
                         <div>

@@ -35,7 +35,7 @@
                             <img class="object-cover w-full h-full group-hover:scale-125 transition-all duration-300 ease-in-out" src="{{asset('storage/'.$data->image)}}" alt="" />
                         </a>
                         <div class="absolute top-2 left-2">
-                            <span class="px-4 py-2 md:text-xs text-[12px] font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full"> dfdf </span>
+                            <span class="px-4 py-2 md:text-xs text-[12px] font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full">{{$data->title}}</span>
                         </div>
                     </div>
                     <div class="px-1 md:pt-2.5 pt-2">

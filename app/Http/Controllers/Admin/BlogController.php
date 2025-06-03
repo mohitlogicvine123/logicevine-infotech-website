@@ -60,6 +60,7 @@ class BlogController extends Controller
         'metadescription' => $request->metadescription,
        ];
 
+
         Blog::create($insert);
          return redirect()->route('blog.index')->with('success', 'Blog created successfully.');
 
@@ -70,7 +71,7 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        //
+      
     }
 
     /**
@@ -87,17 +88,17 @@ class BlogController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       $request->validate([
-        'title' => 'required|string',
-        'description' => 'required',
-        'image' => 'nullable|image',
-        'imagealt' => 'nullable|string',
-        'category' => 'required|string',
-        'author' => 'nullable|string',
-        'metakey' => 'nullable|string',
-        'metatital' => 'nullable|string',
-        'metadescription' => 'nullable|string',
-    ]);
+    //    $request->validate([
+    //     'title' => 'required|string',
+    //     'description' => 'required',
+    //     'image' => 'nullable|image',
+    //     'imagealt' => 'nullable|string',
+    //     'category' => 'required|string',
+    //     'author' => 'nullable|string',
+    //     'metakey' => 'nullable|string',
+    //     'metatital' => 'nullable|string',
+    //     'metadescription' => 'nullable|string',
+    // ]);
 
 
     $blog = Blog::findOrFail($id);

@@ -25,7 +25,7 @@
         <tbody class="divide-y divide-gray-200 dark:divide-dark-border-three">
             @foreach ($inds as  $ind)
             <tr>
-                <td class="p-6 py-4 dk-border-one">{{ $ind->id }}</td>
+                <td class="p-6 py-4 dk-border-one">{{ $loop->iteration }}</td>
                 <td class="p-6 py-4 dk-border-one">{{ $ind->title }}</td>
                  <td>
                  <img src="{{asset('storage/'.$ind->image)}}" alt="ind Image" style="width:100px;">

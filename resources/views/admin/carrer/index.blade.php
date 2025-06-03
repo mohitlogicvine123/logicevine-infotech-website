@@ -25,7 +25,7 @@
         <tbody class="divide-y divide-gray-200 dark:divide-dark-border-three">
             @foreach ($exprience as  $exp)
             <tr>
-                <td class="p-6 py-4 dk-border-one">{{ $exp->id }}</td>
+                <td class="p-6 py-4 dk-border-one">{{ $loop->iteration }}</td>
                 <td class="p-6 py-4 dk-border-one">{{ $exp->experience }}</td>
                 <td class="p-6 py-4 dk-border-one">{{ $exp->title }}</td>
                 <td class="p-6 py-4 dk-border-one">

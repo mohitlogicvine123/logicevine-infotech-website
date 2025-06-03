@@ -46,8 +46,8 @@
                         'move': 'move1 18s linear infinite',
                         'videoplay': 'videoplay linear',
                         'bounce-custom': 'watermarkanimate 3s linear infinite alternate-reverse',
-                        'up-down2': 'updown2 2.3s linear infinite alternate',   
-                        'bounceIn': "1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceIn", 
+                        'up-down2': 'updown2 2.3s linear infinite alternate',
+                        'bounceIn': "1s cubic-bezier(0.215, 0.61, 0.355, 1) both bounceIn",
                     },
 
                     keyframes: {
@@ -148,7 +148,7 @@
             }
         }
     </script>
-    
+
 </head>
 
 <body>
@@ -164,7 +164,7 @@
     <!-- Footer -->
     @include('front-layouts.footer')  <!-- Make sure path is correct -->
 
-    
+
     <!-- js files -->
     <script src="{{asset('assets/libs/swiper/swiper-bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
@@ -290,7 +290,7 @@
             let positionPy = event.y - item.getBoundingClientRect().top;
             let positionY = (positionPy / item.offsetHeight) * 100;
 
-            
+
             item.style.setProperty('--rX', (0.5)*(50 - positionY) + 'deg');
             item.style.setProperty('--rY', -(0.5)*(50 - positionX) + 'deg');
         })
@@ -338,19 +338,19 @@
     }
     </script>
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#contactForm').on('submit', function(e) {
                 e.preventDefault();
-                
+
                 // Reset previous errors & messages
                 $('#nameError, #emailError, #phoneError, #cmpnameError, #messageError').text('');
                 $('#successMessage').addClass('hidden').text('');
-                
+
                 // Change span text instead of button text
                 $('#submitForm span').text('Loading...');
                 $('#submitForm').prop('disabled', true);
-                
+
                 var formData = {
                     name: $('#name').val(),
                     email: $('#email').val(),
@@ -363,12 +363,12 @@
                 $('#loader').removeClass('hidden');
 
                 $.ajax({
-                    url: "",
+                    url: "{{ route('store') }}",
                     method: 'POST',
                     data: formData,
                     success: function(response) {
                         $('#loader').addClass('hidden');
-                        
+
                         if (response.success) {
                             $('#contactForm')[0].reset();
                             $('#successMessage').removeClass('hidden').text(response.message);
@@ -394,7 +394,7 @@
                 });
             });
         });
-    </script>
+    </script> --}}
 
     <script>
         const glightbox = GLightbox({ selector: '.glightbox' });

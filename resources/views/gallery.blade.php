@@ -55,11 +55,14 @@
             </div>
 
             <div id="all-events" class="tab-content grid grid-cols-4">
-            <a href="{{asset('assets/gallery/birthday/birthday-1.webp')}}" class="glightbox gallery-item h-[300px]" data-gallery="all">
-                <img src="{{asset('assets/gallery/birthday/birthday-1.webp')}}" alt="Birthday 1" class="size-full object-cover" />
-                <div class="overlay">Birthday Celebration</div>
-            </a>
-            <a href="{{asset('assets/gallery/party/party-1.webp')}}" class="glightbox gallery-item h-[300px]" data-gallery="all">
+                @foreach ($image as $img)
+
+                <a href="{{asset('storage/'.$img->image)}}" class="glightbox gallery-item h-[300px]" data-gallery="all">
+                    <img src="{{asset('storage/'.$img->image)}}" alt="Birthday 1" class="size-full object-cover" />
+                    <div class="overlay">{{$img->imagealt}}</div>
+                </a>
+                @endforeach
+            {{-- <a href="{{asset('assets/gallery/party/party-1.webp')}}" class="glightbox gallery-item h-[300px]" data-gallery="all">
                 <img src="{{asset('assets/gallery/party/party-1.webp')}}" alt="Diwali 1" class="size-full object-cover" />
                 <div class="overlay">Get Together Party</div>
             </a>
@@ -173,12 +176,8 @@
             <a href="{{asset('assets/gallery/holi/holi-celebration-13.webp')}}" class="glightbox gallery-item overflow-hidden h-[300px]" data-gallery="holi">
                 <img src="{{asset('assets/gallery/holi/holi-celebration-13.webp')}}" alt="Holi 2" class="size-full object-cover" />
                 <div class="overlay">Holi Celebration</div>
-            </a>
-
-
-
-
-            </div>
+            </a> --}}
+          </div>
         </div>
     </section>
 @endsection

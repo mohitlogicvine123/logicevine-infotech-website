@@ -14,7 +14,6 @@
             <div class="w-full">
                 <div class="text-6xl md:text-[100px] font-bold !leading-[130%] text-center uppercase">
                     Blog Detail</div>
-
             </div>
         </div>
     </div>
@@ -24,109 +23,19 @@
             <div class="grid grid-cols-12">
                 <div class="col-span-12 lg:col-span-8">
                     <div class="size-full rounded-md">
-                      @forelse ($data as $item)
-                        <div class="pb-14">
-                            <div class="size-full rounded-md">
-                                <img src="{{ asset('blog').'/'.$item->image }}" alt="">
-                            </div>
-                            <div class="flex items-center gap-3 py-4 border-b flex-wrap ">
-                                <div class="flex items-center gap-1 shrink-0"><span
-                                        class="inline-block size-5 text-slate-700"><svg stroke="currentColor"
-                                            fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="100%"
-                                            width="100%" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="User">
-                                                <g>
-                                                    <path
-                                                        d="M17.438,21.937H6.562a2.5,2.5,0,0,1-2.5-2.5V18.61c0-3.969,3.561-7.2,7.938-7.2s7.938,3.229,7.938,7.2v.827A2.5,2.5,0,0,1,17.438,21.937ZM12,12.412c-3.826,0-6.938,2.78-6.938,6.2v.827a1.5,1.5,0,0,0,1.5,1.5H17.438a1.5,1.5,0,0,0,1.5-1.5V18.61C18.938,15.192,15.826,12.412,12,12.412Z">
-                                                    </path>
-                                                    <path
-                                                        d="M12,9.911a3.924,3.924,0,1,1,3.923-3.924A3.927,3.927,0,0,1,12,9.911Zm0-6.847a2.924,2.924,0,1,0,2.923,2.923A2.926,2.926,0,0,0,12,3.064Z">
-                                                    </path>
-                                                </g>
-                                            </g>
-                                        </svg></span><span class="text-sm text-slate-600 font-bold">BY :</span><a
-                                        href="" class="inline-block text-sm font-semibold text-slate-500">ADMIN</a>
-                                </div>
-                                <div class="flex items-center gap-1 shrink-0">
-
-                                  <span
-                                        class="inline-block size-5 text-slate-700"><svg stroke="currentColor" fill="none"
-                                            stroke-width="1" viewBox="0 0 24 24" stroke-linecap="round"
-                                            stroke-linejoin="round" height="100%" width="100%"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8 9h8"></path>
-                                            <path d="M8 13h6"></path>
-                                            <path
-                                                d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z">
-                                            </path>
-                                        </svg></span><a href=""
-                                        class="inline-block text-sm font-semibold text-slate-500">COMMENTS (0)</a>
-                                </div>
-                                <div class="flex items-center gap-1 shrink-0">
-
-                                  <span
-                                        class="inline-block size-5 text-slate-700"><svg stroke="currentColor"
-                                            fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="100%"
-                                            width="100%" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="Calendar_Date">
-                                                <path
-                                                    d="M18.435,4.955h-1.94v-1.41c0-0.26-0.23-0.51-0.5-0.5c-0.27,0.01-0.5,0.22-0.5,0.5v1.41h-7v-1.41c0-0.26-0.23-0.51-0.5-0.5c-0.27,0.01-0.5,0.22-0.5,0.5v1.41h-1.93c-1.38,0-2.5,1.12-2.5,2.5v11c0,1.38,1.12,2.5,2.5,2.5h12.87c1.38,0,2.5-1.12,2.5-2.5v-11C20.935,6.075,19.815,4.955,18.435,4.955z M19.935,18.455c0,0.83-0.67,1.5-1.5,1.5H5.565c-0.83,0-1.5-0.67-1.5-1.5v-8.42h15.87V18.455z M19.935,9.035H4.065v-1.58c0-0.83,0.67-1.5,1.5-1.5h1.93v0.59c0,0.26,0.23,0.51,0.5,0.5c0.27-0.01,0.5-0.22,0.5-0.5v-0.59h7v0.59c0,0.26,0.23,0.51,0.5,0.5c0.27-0.01,0.5-0.22,0.5-0.5v-0.59 h1.94c0.83,0,1.5,0.67,1.5,1.5V9.035z">
-                                                </path>
-                                                <path
-                                                    d="M11.492,17.173v-3.46c0-0.059-0.064-0.095-0.114-0.064l-0.638,0.392 c-0.1,0.061-0.228-0.01-0.228-0.128v-0.651c0-0.105,0.055-0.203,0.146-0.257l0.764-0.457c0.047-0.028,0.1-0.043,0.154-0.043h0.626 c0.166,0,0.3,0.134,0.3,0.3v4.367c0,0.166-0.134,0.3-0.3,0.3h-0.409C11.626,17.473,11.492,17.339,11.492,17.173z">
-                                                </path>
-                                            </g>
-                                        </svg></span><a href=""
-                                        class="inline-block text-sm font-semibold text-slate-500">{{ \Carbon\Carbon::parse($item->created_at)->format('F j, Y') ??"OCTOBER 9, 2023" }}
-                                    </a></div>
-                            </div>
-                            <div class="pt-9 pb-4"><a href="" class=" sm:text-4xl text-3xl font-semibold">
-                                   {{ $item->heading ??'Make sure your software solution is the best one.'}}</a></div>
-                            <div class="pb-6 sm:text-lg text-sm text-slate-500">
-                                {{$item->description ??"Your product launch is a symbol of your innovation and a powerful asset that can enhance
-                                your business.
-                                Choosing the right development approach can be just as important as selecting the right
-                                features.
-                                Whether you're aiming for a traditional, user-friendly interface or a cutting-edge, modern
-                                design, there
-                                are countless ways to craft your software solution to perfectly suit your business needs.
-                                From seamless
-                                functionality to visually appealing designs, the approach you choose should reflect your
-                                brand's vision
-                                and the goals of your project. Whether you're prioritizing intuitive user experiences or
-                                robust,
-                                scalable architecture, your solution will stand as a lasting testament to your company's
-                                success."}}
-                            </div>
-                              {{-- <div class=""><button
-                                      class="flex justify-between text-slate-950 uppercase items-center overflow-hidden group/btn gap-4 z-20 relative sm:text-base text-sm "><span
-                                          class="group-hover/btn:-translate-x-7  duration-300 w-7 h-[2px] bg-slate-950"></span>
-                                      <span class="group-hover/btn:-translate-x-7 duration-300"> read more</span></button>
-                              </div> --}}
-                        </div>
-                    @empty
-                    @endforelse
-                        {{-- <div class="pb-14">
+                        @forelse ($data as $item)
+                       <div class="pb-14">
                             <div class="size-full rounded-md *:aspect-[1/.5] *:size-full *:object-cover">
-                                <img src="{{ asset('assets/img/blog-3.jpg') }}" alt="">
+                                <img src="{{asset('storage/'.$item->image)}}" alt="">
                             </div>
                             <div class="flex items-center gap-3 py-4 border-b flex-wrap ">
                                 <div class="flex items-center gap-1 shrink-0"><span
                                         class="inline-block size-5 text-slate-700"><svg stroke="currentColor"
                                             fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="100%"
                                             width="100%" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="User">
-                                                <g>
-                                                    <path
-                                                        d="M17.438,21.937H6.562a2.5,2.5,0,0,1-2.5-2.5V18.61c0-3.969,3.561-7.2,7.938-7.2s7.938,3.229,7.938,7.2v.827A2.5,2.5,0,0,1,17.438,21.937ZM12,12.412c-3.826,0-6.938,2.78-6.938,6.2v.827a1.5,1.5,0,0,0,1.5,1.5H17.438a1.5,1.5,0,0,0,1.5-1.5V18.61C18.938,15.192,15.826,12.412,12,12.412Z">
-                                                    </path>
-                                                    <path
-                                                        d="M12,9.911a3.924,3.924,0,1,1,3.923-3.924A3.927,3.927,0,0,1,12,9.911Zm0-6.847a2.924,2.924,0,1,0,2.923,2.923A2.926,2.926,0,0,0,12,3.064Z">
-                                                    </path>
-                                                </g>
-                                            </g>
+
                                         </svg></span><span class="text-sm text-slate-600 font-bold">BY :</span><a
-                                        href="" class="inline-block text-sm font-semibold text-slate-500">ADMIN</a>
+                                        href="" class="inline-block text-sm font-semibold text-slate-500">{{$item->author}}</a>
                                 </div>
                                 <div class="flex items-center gap-1 shrink-0"><span
                                         class="inline-block size-5 text-slate-700"><svg stroke="currentColor" fill="none"
@@ -154,107 +63,21 @@
                                                 </path>
                                             </g>
                                         </svg></span><a href=""
-                                        class="inline-block text-sm font-semibold text-slate-500">OCTOBER 9, 2023
+                                        class="inline-block text-sm font-semibold text-slate-500">{{$item->created_at->format('d M Y');}}
                                     </a></div>
                             </div>
                             <div class="pt-9 pb-4"><a href="" class=" sm:text-4xl text-3xl font-semibold">
-                                    You must need a great developer. </a></div>
+                                 {{$item->title}} </a></div>
                             <div class="pb-6 sm:text-lg text-sm text-slate-500">
-                                Your software solution is a powerful representation of your innovation and a key element
-                                that can
-                                enhance your business's growth. Selecting the right development process is just as crucial
-                                as choosing
-                                the right features. Whether you're aiming for a traditional, user-friendly design or a
-                                sleek, modern
-                                interface, there are countless ways to develop your solution to fit your business
-                                objectives. From
-                                intuitive functionality to cutting-edge features, the development approach should align with
-                                your
-                                company's goals and vision. Whether focusing on seamless performance or innovative
-                                technology, your
-                                software will be the cornerstone of your success.
-
-                            </div>
-                            <div class=""><button
-                                    class="flex justify-between text-slate-950 uppercase items-center overflow-hidden group/btn gap-4 z-20 relative sm:text-base text-sm "><span
-                                        class="group-hover/btn:-translate-x-7  duration-300 w-7 h-[2px] bg-slate-950"></span>
-                                    <span class="group-hover/btn:-translate-x-7 duration-300"> read more</span></button>
+                           {{$item->description}}
                             </div>
                         </div>
-                        <div class="pb-14">
-                            <div class="size-full rounded-md aspect-[1/.5] *:size-full *:object-cover">
-                                <img src="{{ asset('assets/img/blog-4.jpg') }}" alt="">
-                            </div>
-                            <div class="flex items-center gap-3 py-4 border-b flex-wrap ">
-                                <div class="flex items-center gap-1 shrink-0"><span
-                                        class="inline-block size-5 text-slate-700"><svg stroke="currentColor"
-                                            fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="100%"
-                                            width="100%" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="User">
-                                                <g>
-                                                    <path
-                                                        d="M17.438,21.937H6.562a2.5,2.5,0,0,1-2.5-2.5V18.61c0-3.969,3.561-7.2,7.938-7.2s7.938,3.229,7.938,7.2v.827A2.5,2.5,0,0,1,17.438,21.937ZM12,12.412c-3.826,0-6.938,2.78-6.938,6.2v.827a1.5,1.5,0,0,0,1.5,1.5H17.438a1.5,1.5,0,0,0,1.5-1.5V18.61C18.938,15.192,15.826,12.412,12,12.412Z">
-                                                    </path>
-                                                    <path
-                                                        d="M12,9.911a3.924,3.924,0,1,1,3.923-3.924A3.927,3.927,0,0,1,12,9.911Zm0-6.847a2.924,2.924,0,1,0,2.923,2.923A2.926,2.926,0,0,0,12,3.064Z">
-                                                    </path>
-                                                </g>
-                                            </g>
-                                        </svg></span><span class="text-sm text-slate-600 font-bold">BY :</span><a
-                                        href="" class="inline-block text-sm font-semibold text-slate-500">ADMIN</a>
-                                </div>
-                                <div class="flex items-center gap-1 shrink-0"><span
-                                        class="inline-block size-5 text-slate-700"><svg stroke="currentColor"
-                                            fill="none" stroke-width="1" viewBox="0 0 24 24" stroke-linecap="round"
-                                            stroke-linejoin="round" height="100%" width="100%"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8 9h8"></path>
-                                            <path d="M8 13h6"></path>
-                                            <path
-                                                d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z">
-                                            </path>
-                                        </svg></span><a href=""
-                                        class="inline-block text-sm font-semibold text-slate-500">COMMENTS (0)</a>
-                                </div>
-                                <div class="flex items-center gap-1 shrink-0"><span
-                                        class="inline-block size-5 text-slate-700"><svg stroke="currentColor"
-                                            fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="100%"
-                                            width="100%" xmlns="http://www.w3.org/2000/svg">
-                                            <g id="Calendar_Date">
-                                                <path
-                                                    d="M18.435,4.955h-1.94v-1.41c0-0.26-0.23-0.51-0.5-0.5c-0.27,0.01-0.5,0.22-0.5,0.5v1.41h-7v-1.41c0-0.26-0.23-0.51-0.5-0.5c-0.27,0.01-0.5,0.22-0.5,0.5v1.41h-1.93c-1.38,0-2.5,1.12-2.5,2.5v11c0,1.38,1.12,2.5,2.5,2.5h12.87c1.38,0,2.5-1.12,2.5-2.5v-11C20.935,6.075,19.815,4.955,18.435,4.955z M19.935,18.455c0,0.83-0.67,1.5-1.5,1.5H5.565c-0.83,0-1.5-0.67-1.5-1.5v-8.42h15.87V18.455z M19.935,9.035H4.065v-1.58c0-0.83,0.67-1.5,1.5-1.5h1.93v0.59c0,0.26,0.23,0.51,0.5,0.5c0.27-0.01,0.5-0.22,0.5-0.5v-0.59h7v0.59c0,0.26,0.23,0.51,0.5,0.5c0.27-0.01,0.5-0.22,0.5-0.5v-0.59 h1.94c0.83,0,1.5,0.67,1.5,1.5V9.035z">
-                                                </path>
-                                                <path
-                                                    d="M11.492,17.173v-3.46c0-0.059-0.064-0.095-0.114-0.064l-0.638,0.392 c-0.1,0.061-0.228-0.01-0.228-0.128v-0.651c0-0.105,0.055-0.203,0.146-0.257l0.764-0.457c0.047-0.028,0.1-0.043,0.154-0.043h0.626 c0.166,0,0.3,0.134,0.3,0.3v4.367c0,0.166-0.134,0.3-0.3,0.3h-0.409C11.626,17.473,11.492,17.339,11.492,17.173z">
-                                                </path>
-                                            </g>
-                                        </svg></span><a href=""
-                                        class="inline-block text-sm font-semibold text-slate-500">OCTOBER 9, 2023
-                                    </a></div>
-                            </div>
-                            <div class="pt-9 pb-4"><a href="" class=" sm:text-4xl text-3xl font-semibold">Top 10
-                                    Software Development
-                                    Approaches
-                                </a></div>
-                            <div class="pb-6 sm:text-lg text-sm text-slate-500">Your software solution is a powerful
-                                reflection of
-                                your business’s innovation and success. Just like choosing the right features, selecting the
-                                best
-                                development approach is crucial. Whether your goal is traditional, user-friendly, or
-                                cutting-edge, here
-                                are ten key approaches to help you create the perfect software solution:
-
-
-                            </div>
-                            <div class=""><button
-                                    class="flex justify-between text-slate-950 uppercase items-center overflow-hidden group/btn gap-4 z-20 relative sm:text-base text-sm "><span
-                                        class="group-hover/btn:-translate-x-7  duration-300 w-7 h-[2px] bg-slate-950"></span>
-                                    <span class="group-hover/btn:-translate-x-7 duration-300"> read more</span></button>
-                            </div>
-                        </div> --}}
+                        @empty
+               @endforelse
+                        </div>
                     </div>
                 </div>
-                <div class="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4">
+                {{-- <div class="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4">
                     <div class="size-full lg:ps-20">
                         <div class="">
                             <div class="text-2xl pb-5  font-semibold">Search</div>
@@ -331,7 +154,7 @@
                             <div class="flex  flex-nowrap gap-5 pt-4">
                                 <div class="w-1/3 !shrink-0"><a href="#"
                                         class="inline-block aspect-[1/.6] *:object-cover *:size-full">
-                                        <img src="./assets/img/u4b-square.png" alt="">
+                                        <img src="{{asset('storage/'.$item->image)}}" alt="">
                                     </a></div>
                                 <div class="w-9/12">
                                     <div class=""><a class="text-lg font-medium leading-[100%]" href="">10
@@ -354,7 +177,7 @@
                             <div class="flex  flex-nowrap gap-5 pt-4">
                                 <div class="w-1/3 !shrink-0"><a href="#"
                                         class="inline-block aspect-[1/.6] *:object-cover *:size-full">
-                                        <img src="./assets/img/ecommerce.jpg" alt="">
+                                        <img src="{{asset('storage/'.$item->image)}}" alt="">
                                     </a></div>
                                 <div class="w-9/12">
                                     <div class=""><a class="text-lg font-medium leading-[100%]" href="">Top
@@ -376,7 +199,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

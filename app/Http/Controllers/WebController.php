@@ -17,7 +17,7 @@ class WebController extends Controller
 
     public function ind() {
         $inds = Industries::all(); // get all ind in front end
-        $blogs = Blog::latest()->take(3)->get();// gat all blog in front end
+        $blogs = Blog::all();// gat all blog in front end
          return view('index', compact('inds', 'blogs'));
     }
 
@@ -36,11 +36,12 @@ class WebController extends Controller
     }
 
     public function blogdeatils() {
-        $data= Blog::all(); // get blogdetails page in front end 
+        $data= Blog::all(); // get blogdetails page in front end
         return view('blog-detail',compact('data'));
     }
 
     public function contact() {
+        // get form of enquery
         return view('contact-us');
     }
 

@@ -8,8 +8,8 @@
         <thead>
             <tr>
 
+                <th class="p-6 py-4 bg-[#F2F4F9] dark:bg-dark-card-two dk-border-one">Id</th>
                 <th class="p-6 py-4 bg-[#F2F4F9] dark:bg-dark-card-two dk-border-one">Title</th>
-                {{-- <th class="p-6 py-4 bg-[#F2F4F9] dark:bg-dark-card-two dk-border-one">Description</th> --}}
                 <th class="p-6 py-4 bg-[#F2F4F9] dark:bg-dark-card-two dk-border-one">image</th>
                 <th class="p-6 py-4 bg-[#F2F4F9] dark:bg-dark-card-two dk-border-one">Image-Alt</th>
                 <th class="p-6 py-4 bg-[#F2F4F9] dark:bg-dark-card-two dk-border-one">Category</th>
@@ -23,9 +23,9 @@
         <tbody class="divide-y divide-gray-200 dark:divide-dark-border-three">
             @foreach ($blogs as  $blog)
             <tr>
+                <td class="p-6 py-4 dk-border-one">{{ $loop->iteration }}</td>
                 <td class="p-6 py-4 dk-border-one">{{ $blog->title }}</td>
-                {{-- <td class="p-6 py-4 dk-border-one">{{ $blog->description }}</td> --}}
-                 <td>
+                     <td>
                  <img src="{{asset('storage/'.$blog->image)}}" alt="ind Image" style="width:100px;">
                      <td class="p-6 py-4 dk-border-one">{{ $blog->imagealt }}</td>
                 <td class="p-6 py-4 dk-border-one">{{ $blog->category }}</td>
