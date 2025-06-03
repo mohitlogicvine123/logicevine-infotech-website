@@ -1,4 +1,4 @@
-<header class=" group-[]/nav:bg-white lg:mt-0 mt-2 group-[]/nav:mt-0 border-b border-transparent group-[]/nav:border-gray-200 group-[]/nav:shadow-sm group-[]/nav:fixed group-[]/nav:animate-fixed-nav bg-transparent z-[999] fixed top-0 w-full">
+<header class=" group-[]/nav:bg-white lg:mt-0 mt-2 group-[]/nav:mt-0 border-b border-transparent group-[]/nav:border-gray-200 group-[]/nav:shadow-sm group-[]/nav:fixed group-[]/nav:animate-fixed-nav bg-transparent z-[9] fixed top-0 w-full">
     <div class="container xl:px-[18px] md:px-4 px-3.5 mx-auto z-50">
         <!-- topbar -->
         <div class="lg:flex hidden group-[]/nav:hidden py-3.5 px-3 justify-between items-center">
