@@ -73,7 +73,7 @@
           <div class="mb-4">
             <label for="metatital" class="block mb-2 font-medium text-gray-500 dark:text-dark-text">MetaTital</label>
             <div class="flex">
-        <input type="text" id="metatital" name="metatital" class="form-input rounded-l-none" placeholder="Enter Your MetaTital" value="{{$edit->metatitle}}">
+        <input type="text" id="metatital" name="metatital" class="form-input rounded-l-none" placeholder="Enter Your MetaTital" value="{{$edit->metatital}}">
         </div>
             @error('metatital')
                 <p class="text-red-700 font-semibold text-sm mt-1">{{ $message }}</p>

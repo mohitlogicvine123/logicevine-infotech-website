@@ -3,7 +3,7 @@
 @section('content')
 <div class="overflow-x-auto mt-5">
     @if(session('success')) <p style="color:green">{{ session('success') }}</p> @endif
-        <a href="{{route('blog.create')}}" class="btn ">Add Blog</a>
+          <a href="{{ route('blog.create') }}" class="btn btn-primary mb-3"> Add BLOGS</a>
     <table class="table-auto border-collapse w-full whitespace-nowrap text-left text-gray-500 dark:text-dark-text font-medium">
         <thead>
             <tr>
