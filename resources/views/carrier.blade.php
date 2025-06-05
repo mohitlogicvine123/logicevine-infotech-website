@@ -170,60 +170,89 @@
     <!-- ***** Job Openings Section End ***** -->
 
     <!-- ***** Application Modal ***** -->
-    <!-- Modal -->
-<div id="applicationModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl relative">
-        <!-- Close Button -->
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <!-- Modal Header -->
-        <h2 class="text-xl font-bold mb-6 text-center text-gray-700">Apply for <span id="jobTitle" class="text-theme2"></span></h2>
-
-        <!-- Form -->
-        <form action="{{route('careers.submit')}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input type="text" id="name" name="name"
-                       class="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-theme2 focus:border-theme2">
+    <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex items-center justify-center p-3">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800" id="modalTitle">Apply for <span id="jobTitle"></span></h3>
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <form id="applicationForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name*</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme2 focus:border-theme2 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme2 focus:border-theme2 outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme2 focus:border-theme2 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="experience" class="block text-sm font-medium text-gray-700 mb-1">Years of Experience*</label>
+                            <input type="number" id="experience" name="experience" required class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme2 focus:border-theme2 outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="resume" class="block text-sm font-medium text-gray-700 mb-1">Upload Resume (PDF only)*</label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
+                            <div class="space-y-1 text-center">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <div class="flex text-sm text-gray-600">
+                                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-theme2 hover:text-theme2/80 focus-within:outline-none">
+                                        <span>Upload a file</span>
+                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-500">PDF up to 5MB</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="coverLetter" class="block text-sm font-medium text-gray-700 mb-1">Cover Letter (Optional)</label>
+                        <textarea id="coverLetter" name="coverLetter" rows="4" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-theme2 focus:border-theme2 outline-none transition"></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input id="agreeTerms" name="agreeTerms" type="checkbox" required class="h-4 w-4 text-theme2 focus:ring-theme2 border-gray-300 rounded">
+                        <label for="agreeTerms" class="ml-2 block text-sm text-gray-700">I agree to the <a href="#" class="text-theme2 hover:text-theme2/80">privacy policy</a> and <a href="#" class="text-theme2 hover:text-theme2/80">terms of service</a></label>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-theme2 hover:bg-theme2/90 text-white font-medium py-2.5 px-6 rounded-lg transition-all duration-300">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <h4 class="text-lg font-medium text-gray-800 mb-3">Alternatively, you can email us</h4>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <a href="mailto:careers@logicvine.com" class="text-theme2 hover:text-theme2/80">careers@logicvine.com</a>
+                    </div>
+                </div>
             </div>
-
-            <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email"
-                       class="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-theme2 focus:border-theme2">
-            </div>
-
-            <div class="mb-4">
-                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input type="text" id="phone" name="phone"
-                       class="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-theme2 focus:border-theme2">
-            </div>
-
-            <div class="mb-4">
-                <label for="coverletter" class="block text-sm font-medium text-gray-700">Cover-Letter</label>
-                <textarea id="coverletter" name="coverletter" rows="4"
-                          class="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-theme2 focus:border-theme2"></textarea>
-            </div>
-
-            <div class="mb-6">
-                <label for="file_upload" class="block text-sm font-medium text-gray-700">Upload Resume</label>
-                <input type="file" id="file_upload" name="file_upload"
-                       class="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:ring-theme2 focus:border-theme2">
-            </div>
-
-            <div class="text-right">
-                <button type="submit"
-                        class="bg-theme2 hover:bg-theme2/90 text-white font-medium py-2.5 px-6 rounded-lg">
-                    Submit Application
-                </button>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
 
        <script>
             function openModal(jobTitle) {
