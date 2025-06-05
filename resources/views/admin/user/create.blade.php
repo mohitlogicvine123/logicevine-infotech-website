@@ -38,7 +38,6 @@
         </div>
 
           <button type="submit" class="btn b-solid btn-primary-solid px-5 cursor-pointer">Submit</button>
-
     </form>
 </div>
 @endsection

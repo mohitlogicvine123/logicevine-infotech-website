@@ -121,7 +121,7 @@
                                 before:size-full before:-translate-x-full overflow-hidden hover:before:translate-x-0 before:duration-300
                                 hover:text-theme2 {{ Route::currentRouteName() == 'web.carrier' ? '!text-theme2' : '' }}">
                                 <img src="{{asset('assets/img/carrier-icon.svg')}}" alt="carrier" class="h-[18px] mr-1">
-                                Carrier
+                              Carreer
                             </a>
                         </li>
                         <li class="group py-6">

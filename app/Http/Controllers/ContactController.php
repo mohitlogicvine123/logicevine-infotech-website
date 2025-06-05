@@ -12,9 +12,7 @@ class ContactController extends Controller
         return view('admin.enq.index', compact('contact'));
     }
 
-    // public function create(){
-    //     return view('front-common.form');
-    // }
+
 
     public function store(Request $request){
         $request->validate([

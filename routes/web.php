@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\JobController;
 
 // website front
 // Route::get('/', [WebController::class, 'index'])->name('web.index');
@@ -57,5 +58,13 @@ Route::any('contact-us', [WebController::class, 'contact'])->name('web.contact-u
 Route::post('/store',[ContactController::class,'store'])->name('store');
 Route::get('/admin/enquiries', [ContactController::class, 'index'])->name('admin.enq.index');
 Route::delete('/destroy{id}',[ContactController::class,'destroy'])->name('destroy');
+
+//  routs for jobs form in web site
+Route::post('/careers/apply', [JobController::class, 'submitApplication'])->name('careers.submit'); //  submit data into db
+Route::get('/admin/jobs', [JobController::class, 'index'])->name('admin.job.index');
+Route::delete('/destroy{id}',[JobController::class,'destroy'])->name('destroy');
+
+
+
 
 

@@ -69,4 +69,7 @@ class WebController extends Controller
         $blogs = Blog::all();
         return view('ecommerce-development', compact('blogs'));
     }
+
+
+    
 }
