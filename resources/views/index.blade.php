@@ -82,7 +82,7 @@
                     </div>
                     <div class="flex md:mt-6 mt-4">
                         <a href="{{ route('web.contact-us') }}" class="border-2 border-theme2 group text-[15px] text-theme2 py-2.5 px-8 rounded-[10px] font-medium relative overflow-hidden before:content=[''] before:top-0 before:left-0 before:w-[50%] before:duration-300 before:h-0 before:absolute before:bg-theme2 hover:before:h-full before:content=[''] after:bottom-0 after:right-0 after:w-[50%] after:duration-300 after:h-0 after:absolute after:bg-theme2 hover:after:h-full">
-                            <span class="relative group-hover:text-white duration-300 z-10"> Coffee With Us</span>
+                            <span class="relative group-hover:text-white duration-300 z-10"> Have Coffee With Us</span>
                         </a>
                     </div>
                 </div>
@@ -649,7 +649,7 @@
                     </div>
                     <div class="flex items-center justify-center md:mt-7 mt-5">
                         <a href="{{ route('web.contact-us') }}" class="border-2 border-theme2 group md:text-[15px] text-[14px] text-theme2 md:py-3 py-2.5 md:px-7 px-5 rounded-[10px] font-medium relative overflow-hidden before:content=[''] before:top-0 before:left-0 before:w-[51%] before:duration-300 before:h-0 before:absolute before:bg-theme2 hover:before:h-full before:content=[''] after:bottom-0 after:right-0 after:w-[50%] after:duration-300 after:h-0 after:absolute after:bg-theme2 hover:after:h-full">
-                            <span class="relative group-hover:text-white duration-300 z-10">Let's Coffee With Us</span>
+                            <span class="relative group-hover:text-white duration-300 z-10">Have Coffee With Us</span>
                         </a>
                     </div>
                 </div>
@@ -772,12 +772,12 @@
             </div>
             <div class="grid lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 grid-cols-2 mt-7 gap-3">
                  @foreach ($inds as $ind)
-                    <a href="" class="bg-white overflow-hidden block group px-3 py-4 rounded-xl border shadow group relative before:content-[''] before:left-0 before:bottom-0 before:w-full before:h-[70%] before:bg-white hover:before:bg-[#333] before:transition-all before:duration-500 before:ease-in-out before:absolute hover:before:h-full">
+                    <div class="bg-white overflow-hidden block group px-3 py-4 rounded-xl border shadow group relative before:content-[''] before:left-0 before:bottom-0 before:w-full before:h-[70%] before:bg-white hover:before:bg-[#333] before:transition-all before:duration-500 before:ease-in-out before:absolute hover:before:h-full">
                         <div class="md:size-[65px] size-[55px] overflow-hidden mx-auto bg-gray-200 flex items-center justify-center rounded-xl relative before:content-[''] before:left-[50%] before:top-0 before:w-0 before:h-full before:bg-white before:transition-all before:duration-[0.7s] before:ease-in-out before:absolute group-hover:before:w-full group-hover:before:left-0">
                             <img src="{{asset('storage/'.$ind->image)}}" alt="{{$ind->title}}" class="h-[26px] relative">
                         </div>
                         <div class="text-center font-medium block md:text-[15px] text-[14px] md:mt-3.5 mt-3 relative transition-all duration-500 ease-in-out group-hover:text-white">{{$ind->title}}</div>
-                    </a>
+                    </div>
                  @endforeach
             </div>
         </div>
